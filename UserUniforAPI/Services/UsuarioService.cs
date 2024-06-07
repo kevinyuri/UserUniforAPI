@@ -9,8 +9,16 @@ namespace UserUniforAPI.Services
         {
             app.MapGet("v1/usuarios", (AppDbContext context) =>
             {
-                var usuarios = context.Usuarios.ToList();
-                return Results.Ok(usuarios);
+                try
+                {
+                    var usuarios = context.Usuarios.ToList();
+                    return Results.Ok(usuarios);
+                }
+                catch (Exception ex)
+                {
+
+                    return Results.BadRequest($"{ex.Message}");
+                }
             });
 
             app.MapGet("v1/usuarios/{id}", (AppDbContext context, int id) =>
