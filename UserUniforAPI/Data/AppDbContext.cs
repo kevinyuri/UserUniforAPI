@@ -8,6 +8,6 @@ namespace UserUniforAPI.Data
         public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlServer("Server=LAPTOP-0AKONMPE;Database=UsuariosUnifor;Trusted_Connection=True;TrustServerCertificate=True;");
+            => options.UseSqlServer("Server=tcp:demoprojects.database.windows.net,1433;Initial Catalog=usuarioUnifor;Persist Security Info=False;User ID=kevinsato;Password=#sw514132;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
     }
 }
