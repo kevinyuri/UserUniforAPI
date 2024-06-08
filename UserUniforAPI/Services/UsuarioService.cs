@@ -35,6 +35,20 @@ namespace UserUniforAPI.Services
                 }
             });
 
+            app.MapPost("v1/login", (AppDbContext context, LoginRequestModel model) =>
+            {
+                var usuario = context.Usuarios.FirstOrDefault(u => u.userName == model.UserName && u.senha == model.Password);
+
+                if (usuario != null)
+                {
+                    return Results.Ok(usuario);
+                }
+                else
+                {
+                    return Results.NotFound("Usuário não encontrado ou senha incorreta");
+                }
+            });
+
             app.MapPost("v1/usuarios", async (AppDbContext context, UsuarioCreate novoUsuario) =>
             {
                 var usuarioAdicionar = new Usuario

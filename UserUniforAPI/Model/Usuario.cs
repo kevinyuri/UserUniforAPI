@@ -16,4 +16,10 @@
         public string userName { get; set; }
         public string senha { get; set; }
     }
+
+    public class LoginRequestModel
+    {
+        public string UserName { get; set; }
+        public string Password { get; set; }
+    }
 }
