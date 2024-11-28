@@ -29,6 +29,8 @@ app.UseSwaggerUI();
 
 
 app.MapAPPEndpoint();
+app.MapAPPEndpointProduct();
+app.MapAPPEndpointPedido();
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAllOrigins");

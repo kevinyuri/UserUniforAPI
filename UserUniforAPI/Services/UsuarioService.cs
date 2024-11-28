@@ -57,6 +57,7 @@ namespace UserUniforAPI.Services
                     Sobrenome = novoUsuario.Sobrenome,
                     senha = novoUsuario.senha,
                     userName = novoUsuario.userName,
+                    TipoUsuario = novoUsuario.TipoUsuario,
                 };
 
                 context.Usuarios.Add(usuarioAdicionar);

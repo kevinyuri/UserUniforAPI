@@ -7,6 +7,14 @@
         public string Sobrenome { get; set; }
         public string userName { get; set; }
         public string senha { get; set; }
+        public TipoUsuario TipoUsuario { get; set; }
+        public ICollection<Pedido> Pedidos { get; set; }
+    }
+
+    public enum TipoUsuario
+    {
+        Vendedor,
+        Cliente
     }
 
     public class UsuarioCreate
@@ -15,6 +23,7 @@
         public string Sobrenome { get; set; }
         public string userName { get; set; }
         public string senha { get; set; }
+        public TipoUsuario TipoUsuario { get; set; }
     }
 
     public class LoginRequestModel
